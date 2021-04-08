@@ -1,7 +1,7 @@
 import os
 import scipy.misc
 import numpy as np
-
+import traceback
 from model import DCGAN
 from utils import pp, visualize, to_json
 
@@ -93,4 +93,7 @@ def main(_):
     visualize(sess, dcgan, FLAGS, OPTION)
 
 if __name__ == '__main__':
-  tf.app.run()
+  try:
+    tf.app.run()
+  except Exception as e:
+    traceback.print_exc(file=open('/script/dcgan-tensorflow108-buggy.txt','w+'))
