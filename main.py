@@ -93,7 +93,7 @@ def main(_):
       OPTION = 1
       visualize(sess, dcgan, FLAGS, OPTION)
   except Exception as e:
-    traceback.print_exc()
+    traceback.print_exc(file=open('/script/dcgan-tensorflow108-buggy.txt','w+'))
 
 if __name__ == '__main__':
   tf.app.run()
