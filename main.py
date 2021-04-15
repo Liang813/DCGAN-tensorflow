@@ -96,5 +96,8 @@ def main(_):
     traceback.print_exc(file=open('/script/dcgan-tensorflow108-buggy.txt','w+'))
 
 if __name__ == '__main__':
-  tf.app.run()
+  try:
+    tf.app.run()
+  except Exception as e:
+    traceback.print_exc(file=open('/script/dcgan-tensorflow108-buggy.txt','w+'))
   
